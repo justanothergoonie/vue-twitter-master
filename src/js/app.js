@@ -31,5 +31,9 @@ let app = new Vue({
 					console.warn(error);
 				});
 		},
+		hashtagSearch: function () {
+			this.hashtag = this.tweetHashtag;
+			// console.log('hello2', this.tweetHashtag);
+		},
 	},
 });

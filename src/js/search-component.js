@@ -3,15 +3,19 @@ Vue.component('search-interface', {
     <input  
     v-model="tweetHashtag"
     type="text" 
-    name="tweet-search" 
-    class="hashtag" 
+    name="tweet-search"  
+    @keyup="hashtagSearch"
    />
     `,
-	props: ['hashtag'],
-
 	data: function () {
 		return {
 			tweetHashtag: '',
 		};
+	},
+	methods: {
+		hashtagSearch: function () {
+			this.$emit('hashtag', this.tweetHashtag);
+			this.hashtag = this.tweetHashtag;
+		},
 	},
 });

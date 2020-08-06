@@ -12,7 +12,10 @@
 
 	<body>
 		<div id="app">
-			<search-interface :hashtag="hashtag"></search-interface>
+			<search-interface
+				@hashtag="hashtagSearch"
+				:hashtag="hashtag"
+			></search-interface>
 			<tweet-field v-for="tweet in tweets"></tweet-field>
 		</div>
 
