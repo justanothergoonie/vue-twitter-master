@@ -26,8 +26,14 @@ var app = new Vue({
         console.warn(error);
       });
     },
-    hashtagSearch: function hashtagSearch() {
-      this.hashtag = this.tweetHashtag; // console.log('hello2', this.tweetHashtag);
+    hashtagSearch: function hashtagSearch(newHashtag) {
+      this.hashtag = newHashtag;
+    }
+  },
+  watch: {
+    hashtag: function hashtag() {
+      console.log('watching');
+      this.getTweets();
     }
   }
 });

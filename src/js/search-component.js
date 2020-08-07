@@ -14,8 +14,7 @@ Vue.component('search-interface', {
 	},
 	methods: {
 		hashtagSearch: function () {
-			this.$emit('hashtag', this.tweetHashtag);
-			this.hashtag = this.tweetHashtag;
+			this.$emit('user-initiated-search', this.tweetHashtag);
 		},
 	},
 });
