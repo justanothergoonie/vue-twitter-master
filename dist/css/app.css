@@ -79,4 +79,27 @@ body {
 	font-family: 'Quicksand', sans-serif;
 }
 
+#app {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+#app .hashtag-search {
+	margin: 50px 0px;
+	width: 60%;
+	height: 50px;
+}
+
+#app ul {
+	width: 60%;
+	text-align: left;
+}
+
+#app ul li {
+	margin: 10px 0px;
+}
+
 /*# sourceMappingURL=app.css.map */

@@ -15,7 +15,6 @@ TABLE OF CONTENTS:
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 @import 'reset';
 
-
 /* 1. Main Layout ================================= */
 
 * {
@@ -29,4 +28,24 @@ body {
 	background-attachment: fixed;
 	color: white;
 	font-family: 'Quicksand', sans-serif;
+}
+
+#app {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	.hashtag-search {
+		margin: 50px 0px;
+		width: 60%;
+		height: 50px;
+	}
+	ul {
+		width: 60%;
+		text-align: left;
+		li {
+			margin: 10px 0px;
+		}
+	}
 }

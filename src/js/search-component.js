@@ -3,7 +3,8 @@ Vue.component('search-interface', {
     <input  
     v-model="tweetHashtag"
     type="text" 
-    name="tweet-search"  
+	name="tweet-search"  
+	class="hashtag-search"
     @keyup="hashtagSearch"
    />
     `,

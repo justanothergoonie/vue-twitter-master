@@ -1,7 +1,7 @@
 "use strict";
 
 Vue.component('search-interface', {
-  template: "\n    <input  \n    v-model=\"tweetHashtag\"\n    type=\"text\" \n    name=\"tweet-search\"  \n    @keyup=\"hashtagSearch\"\n   />\n    ",
+  template: "\n    <input  \n    v-model=\"tweetHashtag\"\n    type=\"text\" \n\tname=\"tweet-search\"  \n\tclass=\"hashtag-search\"\n    @keyup=\"hashtagSearch\"\n   />\n    ",
   data: function data() {
     return {
       tweetHashtag: ''
