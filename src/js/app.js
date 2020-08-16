@@ -6,6 +6,11 @@ let app = new Vue({
 	data: {
 		tweets: [],
 		hashtag: '',
+		counter: 15,
+	},
+	mounted: function mounted() {
+		this.getTweets();
+		setInterval(this.countdown, 1100);
 	},
 	methods: {
 		getTweets: function () {
@@ -30,9 +35,20 @@ let app = new Vue({
 				.catch((error) => {
 					console.warn(error);
 				});
+			this.resetCounter();
 		},
 		hashtagSearch: function (newHashtag) {
 			this.hashtag = newHashtag;
+		},
+		countdown: function countdown() {
+			this.counter--;
+			if (!this.counter) {
+				this.resetCounter();
+				this.getTweets();
+			}
+		},
+		resetCounter: function resetCounter() {
+			this.counter = 15;
 		},
 	},
 
@@ -40,6 +56,7 @@ let app = new Vue({
 		hashtag: function hashtag() {
 			console.log('watching');
 			this.getTweets();
+			this.resetCounter();
 		},
 	},
 });

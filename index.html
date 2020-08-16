@@ -12,14 +12,23 @@
 
 	<body>
 		<div id="app">
-			<search-interface
-				@user-initiated-search="hashtagSearch"
-			></search-interface>
+			<div class="QnA">
+				<search-interface @user-initiated-search="hashtagSearch">
+				</search-interface>
+				<amount-of-tweets
+					:tweets="tweets"
+					:hashtag="hashtag"
+				></amount-of-tweets>
+				<ticker :counter="counter"></ticker>
+			</div>
+
 			<tweets-here :tweets="tweets"> </tweets-here>
 		</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
 		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="dist/js/amountOfTweets.js"></script>
+		<script src="dist/js/countdown-component.js"></script>
 		<script src="dist/js/tweet-field.js"></script>
 		<script src="dist/js/search-component.js"></script>
 		<script src="dist/js/app.js"></script>

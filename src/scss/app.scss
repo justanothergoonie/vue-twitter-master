@@ -24,7 +24,11 @@ TABLE OF CONTENTS:
 body {
 	background: #ccc;
 	// min-height: 100vh;
-	background: linear-gradient(to bottom right, blue, pink);
+	background: linear-gradient(
+		to bottom right,
+		rgb(255, 101, 101),
+		rgb(253, 195, 88)
+	);
 	background-attachment: fixed;
 	color: white;
 	font-family: 'Quicksand', sans-serif;
@@ -36,16 +40,52 @@ body {
 	justify-content: center;
 	align-items: center;
 	align-content: center;
-	.hashtag-search {
+	.QnA {
+		width: 60%;
 		margin: 50px 0px;
-		width: 60%;
-		height: 50px;
+		display: flex;
+		flex-direction: column;
+
+		.hashtag-search {
+			width: 100%;
+			font-size: 2rem;
+			height: 50px;
+		}
+		.counter1,
+		.counter2,
+		.counter3 {
+			color: red;
+			width: 100px;
+			height: 100px;
+			animation-name: scale-down-center;
+			animation-duration: 1s;
+			animation-timing-function: ease;
+			animation-delay: 0s;
+			animation-iteration-count: 1;
+			animation-direction: normal;
+			animation-fill-mode: none;
+		}
 	}
+
 	ul {
-		width: 60%;
-		text-align: left;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap-reverse;
+		width: 90%;
 		li {
+			width: 50%;
+			flex-grow: 1;
 			margin: 10px 0px;
 		}
+	}
+}
+@keyframes scale-down-center {
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+	100% {
+		-webkit-transform: scale(0.2);
+		transform: scale(0.2);
 	}
 }

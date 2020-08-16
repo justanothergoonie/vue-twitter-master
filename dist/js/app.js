@@ -5,7 +5,12 @@ var app = new Vue({
   el: '#app',
   data: {
     tweets: [],
-    hashtag: ''
+    hashtag: '',
+    counter: 15
+  },
+  mounted: function mounted() {
+    this.getTweets();
+    setInterval(this.countdown, 1100);
   },
   methods: {
     getTweets: function getTweets() {
@@ -25,15 +30,28 @@ var app = new Vue({
       }).catch(function (error) {
         console.warn(error);
       });
+      this.resetCounter();
     },
     hashtagSearch: function hashtagSearch(newHashtag) {
       this.hashtag = newHashtag;
+    },
+    countdown: function countdown() {
+      this.counter--;
+
+      if (!this.counter) {
+        this.resetCounter();
+        this.getTweets();
+      }
+    },
+    resetCounter: function resetCounter() {
+      this.counter = 15;
     }
   },
   watch: {
     hashtag: function hashtag() {
       console.log('watching');
       this.getTweets();
+      this.resetCounter();
     }
   }
 });
